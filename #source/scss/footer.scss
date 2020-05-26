@@ -1,0 +1,115 @@
+
+.footer {
+    width: 100%;
+
+    padding: 70px 0 0 0;
+
+    background: #F6F6F8;
+
+    transition: all 0.2s linear;
+
+    @media screen and (max-width: 666px) {
+       padding: 45px 0 0 0;
+    }
+
+    &__body {
+        width: 100%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-direction: column;
+    }
+
+    &__list {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(4, 242px);
+        grid-row-gap: 50px;
+        grid-column-gap: 20px;
+        grid-auto-flow: dense;
+        justify-items: center;
+        justify-content: center;
+
+        padding: 0 0 70px 0;
+
+        border-bottom: 1px solid #E0E0E0;
+
+        @media screen and (max-width: 1090px) {
+           grid-template-columns: repeat(2, 242px);
+           justify-items: flex-start;
+           grid-column-gap: 100px;
+        }
+
+        @media screen and (max-width: 666px) {
+           grid-template-columns: repeat(1, 242px);
+           grid-row-gap: 70px;
+        }
+    }
+
+    // &__item {
+    //     margin: 0 0 0 40px;
+
+    //     &:first-child {
+    //         margin: 0;
+    //     }
+    // }
+
+    &__item-title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+
+        color: #000000;
+
+        margin: 0 0 35px 0;
+    }
+
+    &__item-link-list {
+    }
+
+    &__link {
+        font-size: 14px;
+        line-height: 22px;
+
+        margin: 0 0 30px 0;
+
+        &:last-child {
+            margin: 0;
+        }
+
+        a {
+            color: #999999;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            img {
+                margin-right: 15px;
+            }
+            
+            &:hover {
+                color: rgb(151, 179, 236);
+            }
+        }
+    }
+
+    &__bottom {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 30px 0;
+
+        font-size: 13px;
+        line-height: 21px;
+        text-align: center;
+
+        color: #999999;
+    }
+}

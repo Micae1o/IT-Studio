@@ -1,0 +1,213 @@
+
+.header {
+    position: fixed;   
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+
+    height: 100px;
+    
+    border-bottom: 1px solid rgb(161, 161, 161, 0.5);
+
+    transition: all 0.3s linear;
+
+    &.fixed {
+        background-color: rgba(133, 133, 133, 0.5);
+    }
+
+    &__body {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: 735px) {
+           justify-content: flex-end;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-left: 540px;
+
+        transition: all 0.3s linear;
+
+        @media screen and (max-width: 1250px) {
+           margin: 0;
+        }
+    }
+
+    &__burger {
+        opacity: 0;
+        display: none;
+        z-index: 4;
+        width: 80px;
+
+        @media screen and (max-width: 735px) {
+            display: block;
+            opacity: 1;
+            transition: all 0.3s linear;
+        }
+    }
+
+
+    .ham {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 400ms;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .hamRotate.active {
+        transform: rotate(45deg);
+    }
+
+    .line {
+        fill:none;
+        transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+        stroke:#fff;
+        stroke-width:5.5;
+        stroke-linecap:round;
+    }   
+
+    .ham8 .top {
+        stroke-dasharray: 40 160;
+    }
+    .ham8 .middle {
+        stroke-dasharray: 40 142;
+        transform-origin: 50%;
+        transition: transform 400ms;
+    }
+    .ham8 .bottom {
+        stroke-dasharray: 40 85;
+        transform-origin: 50%;
+        transition: transform 400ms, stroke-dashoffset 400ms;
+    }
+    .ham8.active .top {
+        stroke-dashoffset: -64px;
+    }
+    .ham8.active .middle {
+        //stroke-dashoffset: -20px;
+        transform: rotate(90deg);
+    }
+    .ham8.active .bottom {
+        stroke-dashoffset: -64px;
+    }
+
+    @media screen and (max-width: 735px) {
+       height: 70px;
+    }
+}
+.menu {
+
+    .menu__item {
+
+        &:first-child .menu__link {
+            margin: 0;
+        }
+
+        @media screen and (max-width: 735px) {
+           margin-bottom: 50px;
+
+           &:last-child {
+               margin-bottom: 0;
+           }
+        }
+    }
+
+    &__link {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        position: relative;
+
+        color: #FFFFFF;
+
+        margin: 0 0 0 45px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 135%;
+            height: 2px;
+            bottom: -41px;
+            left: -17.5%;
+            background-color: #FFFFFF;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+
+            transition: all 0.2s linear;
+        }
+
+        transition: all 0.2s linear;
+
+        &:hover {
+            color: rgb(210, 227, 255);
+        }
+
+        &:hover:before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media screen and (max-width: 735px) {
+           font-size: 28px;
+           margin-left: 0;
+
+           &:before {
+                content: '';
+                position: absolute;
+                width: 120%;
+                height: 2px;
+                bottom: -10px;
+                left: -10%;
+                background-color: #FFFFFF;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+
+                transition: all 0.2s linear;
+            }
+        }
+    }
+
+    @media screen and (max-width: 735px) {
+        padding: 0px;
+        margin: 0px;
+
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        overflow: auto;
+        background: #4985FF;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        transition: all 0.3s ease 0s;
+
+
+        &.active {
+            transform: translateY(100%);
+        }  
+    }
+}
